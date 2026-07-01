@@ -1,0 +1,51 @@
+2026-07-01 04:10:27 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 04:10:27 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 04:10:27 | INFO | src.agent:start_session:104 - Начата сессия: SESSION-20260701041027
+2026-07-01 04:10:27 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:10:27 | INFO | src.search_module:search_best_practices:96 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:10:27 | INFO | src.search_module:search_best_practices:112 - Найдено 6 практик для анализа
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Челябинская область
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Пермский край
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Татарстан
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Башкортостан
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Московская область
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Ленинградская область
+2026-07-01 04:10:27 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 10000000
+2026-07-01 04:10:27 | INFO | src.database_module:get_investment_objects:312 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:10:27 | INFO | src.search_module:search_investment_opportunities:202 - Поиск инвестиционных возможностей: industry=металлургия, min=10000000
+2026-07-01 04:10:27 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, medium
+2026-07-01 04:10:27 | INFO | src.database_module:get_support_measures:151 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:10:27 | INFO | src.agent:create_investment_proposal:256 - Создание инвестпредложения: Индустриальный парк 'Титановая долина'
+2026-07-01 04:10:27 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, medium
+2026-07-01 04:10:27 | INFO | src.database_module:get_support_measures:151 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:10:27 | INFO | src.analysis_module:create_investment_proposal:239 - Создание инвестпредложения: Индустриальный парк 'Титановая долина'
+2026-07-01 04:10:27 | INFO | src.documents_module:create_template_files:160 - Создан шаблон: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents\grant_application.txt
+2026-07-01 04:10:27 | INFO | src.documents_module:create_template_files:160 - Создан шаблон: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents\business_plan.txt
+2026-07-01 04:10:27 | INFO | src.documents_module:create_template_files:160 - Создан шаблон: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents\financial_model.xlsx
+2026-07-01 04:10:27 | INFO | src.documents_module:create_template_files:160 - Создан шаблон: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents\subsidy_application.txt
+2026-07-01 04:10:27 | INFO | src.documents_module:create_template_files:160 - Создан шаблон: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents\fund_application.txt
+2026-07-01 04:10:27 | INFO | src.agent:prepare_documents_package:295 - Подготовка документов: Грант на развитие промышленного производства
+2026-07-01 04:10:27 | INFO | src.documents_module:create_document_package:350 - Создание пакета документов для: Грант на развитие промышленного производства
+2026-07-01 04:10:27 | INFO | src.documents_module:generate_document:312 - Сгенерирован документ: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents\grant_application_Грант_на_развитие_промышленного_производства.txt
+2026-07-01 04:10:27 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации business_plan: Отсутствуют обязательные поля: ['summary', 'market_analysis', 'financial_plan', 'risk_analysis']
+2026-07-01 04:10:27 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации financial_model: Отсутствуют обязательные поля: ['revenue_forecast', 'expenses_forecast', 'cash_flow', 'payback_period']
+2026-07-01 04:10:27 | INFO | src.documents_module:validate_document:422 - Валидация документа: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents\grant_application_Грант_на_развитие_промышленного_производства.txt
+2026-07-01 04:10:27 | INFO | src.agent:prepare_documents_package:307 - Пакет документов: PKG-20260701041027, статус: needs_revision
+2026-07-01 04:10:27 | INFO | src.agent:verify_documents:324 - Верификация пакета: PKG-20260701041027
+2026-07-01 04:10:27 | INFO | src.documents_module:validate_document:422 - Валидация документа: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents\grant_application_Грант_на_развитие_промышленного_производства.txt
+2026-07-01 04:10:27 | INFO | src.agent:full_investment_analysis:417 - Комплексный анализ: металлургия
+2026-07-01 04:10:27 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:10:27 | INFO | src.search_module:search_best_practices:96 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:10:27 | INFO | src.search_module:search_best_practices:112 - Найдено 6 практик для анализа
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Челябинская область
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Пермский край
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Татарстан
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Башкортостан
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Московская область
+2026-07-01 04:10:27 | INFO | src.analysis_module:analyze_practice:90 - Анализ практики: Цифровизация металлургия в Ленинградская область
+2026-07-01 04:10:27 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 50000000
+2026-07-01 04:10:27 | INFO | src.database_module:get_investment_objects:312 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:10:27 | INFO | src.search_module:search_investment_opportunities:202 - Поиск инвестиционных возможностей: industry=металлургия, min=50000000
+2026-07-01 04:10:27 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, smo
+2026-07-01 04:10:27 | INFO | src.database_module:get_support_measures:151 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:10:27 | INFO | src.agent:end_session:113 - Завершена сессия: SESSION-20260701041027

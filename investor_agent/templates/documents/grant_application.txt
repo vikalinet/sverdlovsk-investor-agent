@@ -1,0 +1,30 @@
+
+ЗАЯВКА НА ГРАНТ
+Регион: {{ region }}
+
+1. ЗАЯВИТЕЛЬ
+   Наименование: {{ applicant_name }}
+   ИНН: {{ inn }}
+   ОГРН: {{ ogrn }}
+   Адрес: {{ address }}
+   Контакты: {{ contact_phone }}, {{ contact_email }}
+
+2. ПРОЕКТ
+   Наименование: {{ project_name }}
+   Отрасль: {{ industry }}
+   Описание: {{ description }}
+   
+3. ПАРАМЕТРЫ
+   Сумма инвестиций: {{ investment_amount }} руб.
+   Запрашиваемая сумма гранта: {{ grant_amount }} руб.
+   Создаваемые рабочие места: {{ jobs_created }}
+   Срок реализации: {{ implementation_period }} мес.
+
+4. ОБОСНОВАНИЕ
+   {{ justification }}
+
+5. ОЖИДАЕМЫЕ РЕЗУЛЬТАТЫ
+   {{ expected_results }}
+
+Дата: {{ current_date }}
+Подпись: _________________

@@ -1,0 +1,25 @@
+# Основные зависимости
+python-dotenv>=1.0.0
+requests>=2.31.0
+aiohttp>=3.9.0
+
+# Работа с данными
+pandas>=2.0.0
+sqlalchemy>=2.0.0
+
+# MCP SDK
+mcp>=1.0.0
+
+# Обработка документов
+jinja2>=3.1.0
+docx>=0.2.4
+reportlab>=4.0.0
+
+# Утилиты
+pydantic>=2.5.0
+pyyaml>=6.0.0
+loguru>=0.7.0
+
+# Тестирование
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
