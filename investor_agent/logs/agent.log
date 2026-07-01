@@ -329,3 +329,726 @@
 2026-07-01 04:33:45 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
 2026-07-01 04:33:45 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
 2026-07-01 04:33:45 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:40:55 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 04:40:55 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 04:40:55 | INFO | web.app:<module>:34 - Агент инициализирован
+2026-07-01 04:40:55 | INFO | web.app:find_best_practices:82 - Поиск практик: industry=металлургия
+2026-07-01 04:40:55 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:40:55 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | web.app:find_investment_opportunities:139 - Поиск возможностей: металлургия, 10000000
+2026-07-01 04:40:55 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 10000000
+2026-07-01 04:40:55 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:40:55 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=металлургия, min=10000000
+2026-07-01 04:40:55 | INFO | web.app:find_support_measures:195 - Поиск мер поддержки: металлургия
+2026-07-01 04:40:55 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, medium
+2026-07-01 04:40:55 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:40:55 | INFO | web.app:prepare_documents_package:319 - Подготовка документов: Грант на развитие
+2026-07-01 04:40:55 | INFO | src.agent:prepare_documents_package:295 - Подготовка документов: Грант на развитие
+2026-07-01 04:40:55 | INFO | src.documents_module:create_document_package:350 - Создание пакета документов для: Грант на развитие
+2026-07-01 04:40:55 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации grant_application: Отсутствуют обязательные поля: ['description']
+2026-07-01 04:40:55 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации business_plan: Отсутствуют обязательные поля: ['summary', 'market_analysis', 'financial_plan', 'risk_analysis']
+2026-07-01 04:40:55 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации financial_model: Отсутствуют обязательные поля: ['revenue_forecast', 'expenses_forecast', 'cash_flow', 'payback_period']
+2026-07-01 04:40:55 | INFO | src.agent:prepare_documents_package:307 - Пакет документов: PKG-20260701044055, статус: needs_revision
+2026-07-01 04:40:55 | INFO | src.agent:verify_documents:324 - Верификация пакета: PKG-20260701044055
+2026-07-01 04:40:55 | INFO | web.app:full_investment_analysis:402 - Комплексный анализ: металлургия
+2026-07-01 04:40:55 | INFO | src.agent:full_investment_analysis:417 - Комплексный анализ: металлургия
+2026-07-01 04:40:55 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:40:55 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:40:55 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:40:55 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:40:55 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:40:55 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 50000000
+2026-07-01 04:40:55 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:40:55 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=металлургия, min=50000000
+2026-07-01 04:40:55 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, smo
+2026-07-01 04:40:55 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:41:21 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 04:41:21 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 04:41:21 | INFO | web.app:<module>:34 - Агент инициализирован
+2026-07-01 04:41:21 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:21 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:21 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:21 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:21 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:21 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:21 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:21 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:21 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:21 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=IT, min=0
+2026-07-01 04:41:21 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 04:41:21 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 04:41:21 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:41:21 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 04:41:21 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=Екатеринбург
+2026-07-01 04:41:21 | INFO | src.documents_module:_init_templates:141 - Инициализировано 5 шаблонов
+2026-07-01 04:41:21 | INFO | src.documents_module:__init__:78 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 04:41:21 | INFO | src.documents_module:_init_templates:141 - Инициализировано 5 шаблонов
+2026-07-01 04:41:21 | INFO | src.documents_module:__init__:78 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 04:41:21 | INFO | src.documents_module:generate_document:312 - Сгенерирован документ: C:\Users\luita\AppData\Local\Temp\pytest-of-luita\pytest-1\test_generate_document0\test_grant.txt
+2026-07-01 04:41:21 | INFO | src.documents_module:_init_templates:141 - Инициализировано 5 шаблонов
+2026-07-01 04:41:21 | INFO | src.documents_module:__init__:78 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 04:41:21 | INFO | src.documents_module:create_document_package:350 - Создание пакета документов для: Тестовый грант
+2026-07-01 04:41:21 | INFO | src.documents_module:generate_document:312 - Сгенерирован документ: C:\Users\luita\AppData\Local\Temp\pytest-of-luita\pytest-1\test_create_document_package0\grant_application_Тестовый_грант.txt
+2026-07-01 04:41:21 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации business_plan: Отсутствуют обязательные поля: ['summary', 'market_analysis', 'financial_plan', 'risk_analysis']
+2026-07-01 04:41:21 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации financial_model: Отсутствуют обязательные поля: ['revenue_forecast', 'expenses_forecast', 'cash_flow', 'payback_period']
+2026-07-01 04:41:21 | INFO | src.documents_module:_init_templates:141 - Инициализировано 5 шаблонов
+2026-07-01 04:41:21 | INFO | src.documents_module:__init__:78 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 04:41:21 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:21 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.967
+2026-07-01 04:41:21 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 04:41:21 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 04:41:21 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:21 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.933
+2026-07-01 04:41:21 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 04:41:21 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 04:41:21 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Тестовая практика
+2026-07-01 04:41:21 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.983
+2026-07-01 04:41:22 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 04:41:22 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 04:41:22 | INFO | src.analysis_module:create_investment_proposal:296 - Создание инвестпредложения: Тестовый объект
+2026-07-01 04:41:22 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:22 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:22 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 04:41:22 | INFO | src.documents_module:_init_templates:141 - Инициализировано 5 шаблонов
+2026-07-01 04:41:22 | INFO | src.documents_module:__init__:78 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.983
+2026-07-01 04:41:22 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 04:41:22 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 04:41:22 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 04:41:22 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 04:41:22 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 04:41:22 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 04:41:22 | INFO | src.agent:start_session:104 - Начата сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:start_session:104 - Начата сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:full_investment_analysis:417 - Комплексный анализ: металлургия
+2026-07-01 04:41:22 | INFO | src.agent:full_investment_analysis:417 - Комплексный анализ: металлургия
+2026-07-01 04:41:22 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:41:22 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:41:22 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:22 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:22 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:22 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:22 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 10000000
+2026-07-01 04:41:22 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 10000000
+2026-07-01 04:41:22 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:41:22 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:41:22 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=металлургия, min=10000000
+2026-07-01 04:41:22 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=металлургия, min=10000000
+2026-07-01 04:41:22 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, smo
+2026-07-01 04:41:22 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, smo
+2026-07-01 04:41:22 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:41:22 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:41:22 | INFO | src.agent:end_session:113 - Завершена сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:end_session:113 - Завершена сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:22 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:22 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:22 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:22 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 04:41:22 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 04:41:22 | INFO | src.documents_module:_init_templates:141 - Инициализировано 5 шаблонов
+2026-07-01 04:41:22 | INFO | src.documents_module:_init_templates:141 - Инициализировано 5 шаблонов
+2026-07-01 04:41:22 | INFO | src.documents_module:__init__:78 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 04:41:22 | INFO | src.documents_module:__init__:78 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.900
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.900
+2026-07-01 04:41:22 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 04:41:22 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 04:41:22 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 04:41:22 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 04:41:22 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 04:41:22 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 04:41:22 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 04:41:22 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 04:41:22 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 04:41:22 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 04:41:22 | INFO | src.agent:start_session:104 - Начата сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:start_session:104 - Начата сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:start_session:104 - Начата сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:start_session:104 - Начата сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:start_session:104 - Начата сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:start_session:104 - Начата сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:end_session:113 - Завершена сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:end_session:113 - Завершена сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | src.agent:end_session:113 - Завершена сессия: SESSION-20260701044122
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.975
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.975
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.975
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:22 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.883
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.883
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.883
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=random_forest
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=random_forest
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=random_forest
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.930
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.930
+2026-07-01 04:41:23 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.930
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: инвестиционные площадки, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: инвестиционные площадки, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: инвестиционные площадки, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 2 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 2 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 2 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: инвестиции Свердловская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: инвестиции Свердловская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: инвестиции Свердловская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 1 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 1 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 1 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 04:41:23 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: IT
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: IT
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: IT
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики IT Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | web.app:find_best_practices:82 - Поиск практик: industry=металлургия
+2026-07-01 04:41:23 | INFO | web.app:find_best_practices:82 - Поиск практик: industry=металлургия
+2026-07-01 04:41:23 | INFO | web.app:find_best_practices:82 - Поиск практик: industry=металлургия
+2026-07-01 04:41:23 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:41:23 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:41:23 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | web.app:find_investment_opportunities:139 - Поиск возможностей: металлургия, 10000000
+2026-07-01 04:41:23 | INFO | web.app:find_investment_opportunities:139 - Поиск возможностей: металлургия, 10000000
+2026-07-01 04:41:23 | INFO | web.app:find_investment_opportunities:139 - Поиск возможностей: металлургия, 10000000
+2026-07-01 04:41:23 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 10000000
+2026-07-01 04:41:23 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 10000000
+2026-07-01 04:41:23 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 10000000
+2026-07-01 04:41:23 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:41:23 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:41:23 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:41:23 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=металлургия, min=10000000
+2026-07-01 04:41:23 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=металлургия, min=10000000
+2026-07-01 04:41:23 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=металлургия, min=10000000
+2026-07-01 04:41:23 | INFO | web.app:find_support_measures:195 - Поиск мер поддержки: металлургия
+2026-07-01 04:41:23 | INFO | web.app:find_support_measures:195 - Поиск мер поддержки: металлургия
+2026-07-01 04:41:23 | INFO | web.app:find_support_measures:195 - Поиск мер поддержки: металлургия
+2026-07-01 04:41:23 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, medium
+2026-07-01 04:41:23 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, medium
+2026-07-01 04:41:23 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, medium
+2026-07-01 04:41:23 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:41:23 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:41:23 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:41:23 | INFO | web.app:prepare_documents_package:319 - Подготовка документов: Грант на развитие
+2026-07-01 04:41:23 | INFO | web.app:prepare_documents_package:319 - Подготовка документов: Грант на развитие
+2026-07-01 04:41:23 | INFO | web.app:prepare_documents_package:319 - Подготовка документов: Грант на развитие
+2026-07-01 04:41:23 | INFO | src.agent:prepare_documents_package:295 - Подготовка документов: Грант на развитие
+2026-07-01 04:41:23 | INFO | src.agent:prepare_documents_package:295 - Подготовка документов: Грант на развитие
+2026-07-01 04:41:23 | INFO | src.agent:prepare_documents_package:295 - Подготовка документов: Грант на развитие
+2026-07-01 04:41:23 | INFO | src.documents_module:create_document_package:350 - Создание пакета документов для: Грант на развитие
+2026-07-01 04:41:23 | INFO | src.documents_module:create_document_package:350 - Создание пакета документов для: Грант на развитие
+2026-07-01 04:41:23 | INFO | src.documents_module:create_document_package:350 - Создание пакета документов для: Грант на развитие
+2026-07-01 04:41:23 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации grant_application: Отсутствуют обязательные поля: ['description']
+2026-07-01 04:41:23 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации grant_application: Отсутствуют обязательные поля: ['description']
+2026-07-01 04:41:23 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации grant_application: Отсутствуют обязательные поля: ['description']
+2026-07-01 04:41:23 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации business_plan: Отсутствуют обязательные поля: ['summary', 'market_analysis', 'financial_plan', 'risk_analysis']
+2026-07-01 04:41:23 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации business_plan: Отсутствуют обязательные поля: ['summary', 'market_analysis', 'financial_plan', 'risk_analysis']
+2026-07-01 04:41:23 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации business_plan: Отсутствуют обязательные поля: ['summary', 'market_analysis', 'financial_plan', 'risk_analysis']
+2026-07-01 04:41:23 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации financial_model: Отсутствуют обязательные поля: ['revenue_forecast', 'expenses_forecast', 'cash_flow', 'payback_period']
+2026-07-01 04:41:23 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации financial_model: Отсутствуют обязательные поля: ['revenue_forecast', 'expenses_forecast', 'cash_flow', 'payback_period']
+2026-07-01 04:41:23 | ERROR | src.documents_module:create_document_package:376 - Ошибка генерации financial_model: Отсутствуют обязательные поля: ['revenue_forecast', 'expenses_forecast', 'cash_flow', 'payback_period']
+2026-07-01 04:41:23 | INFO | src.agent:prepare_documents_package:307 - Пакет документов: PKG-20260701044123, статус: needs_revision
+2026-07-01 04:41:23 | INFO | src.agent:prepare_documents_package:307 - Пакет документов: PKG-20260701044123, статус: needs_revision
+2026-07-01 04:41:23 | INFO | src.agent:prepare_documents_package:307 - Пакет документов: PKG-20260701044123, статус: needs_revision
+2026-07-01 04:41:23 | INFO | src.agent:verify_documents:324 - Верификация пакета: PKG-20260701044123
+2026-07-01 04:41:23 | INFO | src.agent:verify_documents:324 - Верификация пакета: PKG-20260701044123
+2026-07-01 04:41:23 | INFO | src.agent:verify_documents:324 - Верификация пакета: PKG-20260701044123
+2026-07-01 04:41:23 | INFO | web.app:full_investment_analysis:402 - Комплексный анализ: металлургия
+2026-07-01 04:41:23 | INFO | web.app:full_investment_analysis:402 - Комплексный анализ: металлургия
+2026-07-01 04:41:23 | INFO | web.app:full_investment_analysis:402 - Комплексный анализ: металлургия
+2026-07-01 04:41:23 | INFO | src.agent:full_investment_analysis:417 - Комплексный анализ: металлургия
+2026-07-01 04:41:23 | INFO | src.agent:full_investment_analysis:417 - Комплексный анализ: металлургия
+2026-07-01 04:41:23 | INFO | src.agent:full_investment_analysis:417 - Комплексный анализ: металлургия
+2026-07-01 04:41:23 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:41:23 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:41:23 | INFO | src.agent:find_best_practices:135 - Поиск лучших практик: industry=металлургия
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:111 - Поиск лучших практик для отрасли: металлургия
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Московская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Ленинградская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Татарстан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Башкортостан, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Челябинская область, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:85 - Поиск: лучшие практики металлургия Пермский край, provider=mock
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_api_client:search:101 - Найдено 3 результатов
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.search_module:search_best_practices:127 - Найдено 18 практик для анализа
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Цифровизация металлургического производства: опыт ЧМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Энергоэффективность в металлургии: кейс НЛМК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.analysis_module:analyze_practice:111 - Анализ практики: Автоматизация контроля качества на ММК
+2026-07-01 04:41:23 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 50000000
+2026-07-01 04:41:23 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 50000000
+2026-07-01 04:41:23 | INFO | src.agent:find_investment_opportunities:182 - Поиск инвествозможностей: металлургия, 50000000
+2026-07-01 04:41:23 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:41:23 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:41:23 | INFO | src.database_module:get_investment_objects:316 - Запрос инвестобъектов: type=None, location=None
+2026-07-01 04:41:23 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=металлургия, min=50000000
+2026-07-01 04:41:23 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=металлургия, min=50000000
+2026-07-01 04:41:23 | INFO | src.search_module:search_investment_opportunities:228 - Поиск инвестиционных возможностей: industry=металлургия, min=50000000
+2026-07-01 04:41:23 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, smo
+2026-07-01 04:41:23 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, smo
+2026-07-01 04:41:23 | INFO | src.agent:find_support_measures:230 - Поиск мер поддержки: металлургия, smo
+2026-07-01 04:41:23 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:41:23 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None
+2026-07-01 04:41:23 | INFO | src.database_module:get_support_measures:155 - Запрос мер поддержки: industry=металлургия, type=None

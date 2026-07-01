@@ -37,6 +37,52 @@ python main.py
 
 ```
 investor_agent/
+├── config.py                    # Конфигурация
+├── main.py                      # Демонстрация
+├── run_mcp_servers.py           # Запуск MCP-серверов
+├── requirements.txt             # Зависимости
+├── README.md                    # Главная документация
+├── USAGE.md                     # Руководство пользователя
+├── MCP_SERVERS.md               # Документация MCP
+├── SEARCH_API.md                # Документация поиска
+├── ML_MODEL.md                  # Документация ML
+├── WEB_INTERFACE.md             # Документация Web ⭐
+│
+├── web/                         # Веб-интерфейс ⭐
+│   ├── __init__.py
+│   ├── app.py                   # Flask API
+│   └── static/
+│       └── index.html           # React SPA
+│
+├── mcp_servers/                 # MCP-серверы
+│   ├── support_measures_server.py
+│   ├── investment_objects_server.py
+│   ├── business_registry_server.py
+│   └── data/                    # 3 SQLite базы
+│
+├── ml_models/                   # ML-модули
+│   ├── __init__.py
+│   └── applicability_model.py   # Gradient Boosting
+│
+├── src/                         # Модули агента
+│   ├── agent.py
+│   ├── search_module.py
+│   ├── search_api_client.py
+│   ├── database_module.py
+│   ├── documents_module.py
+│   └── analysis_module.py
+│
+├── templates/documents/         # 5 шаблонов
+├── output/                      # Результаты
+├── logs/                        # Логи
+└── tests/                       # 56 тестов
+    ├── test_agent.py            # 15 тестов
+    ├── test_mcp_servers.py      # 10 тестов
+    ├── test_search_api.py       # 7 тестов
+    ├── test_ml_model.py         # 13 тестов
+    └── test_web_api.py          # 11 тестов ⭐
+```
+investor_agent/
 ├── config.py                     # Конфигурация
 ├── main.py                       # Точка входа
 ├── run_mcp_servers.py            # Запуск MCP-серверов
@@ -108,10 +154,11 @@ python run_mcp_servers.py all
 | 🤖 ML-модель | ✅ | Gradient Boosting (accuracy 0.91+) |
 | 📄 Документы | ✅ | 5 шаблонов, генерация, валидация |
 | 📊 Анализ | ✅ | Практики, инвестиции, предложения |
-| 🧪 Тесты | ✅ | 36 тестов, все проходят |
+| 🌐 Веб-интерфейс | ✅ | Flask API + React SPA |
+| 🧪 Тесты | ✅ | 56 тестов, все проходят |
 
 ## 🛠️ В разработке
 
-🔲 Веб-интерфейс (Flask + React)  
 🔲 Расширенные шаблоны документов  
 🔲 Интеграция с реальными API Мининвеста  
+🔲 Telegram-бот  

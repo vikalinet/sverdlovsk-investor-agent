@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощник инвестора - Свердловская область</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            color: #667eea;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        header p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-tab {
+            padding: 12px 24px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .nav-tab.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .results {
+            margin-top: 30px;
+        }
+        
+        .result-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .result-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .result-card .meta {
+            display: flex;
+            gap: 20px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        
+        .result-card .meta span {
+            background: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .score-high { color: #22c55e; }
+        .score-medium { color: #f59e0b; }
+        .score-low { color: #ef4444; }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .checklist li:before {
+            content: "✓ ";
+            color: #22c55e;
+            font-weight: bold;
+        }
+        
+        .error {
+            background: #fee;
+            color: #c00;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #c00;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏭 Помощник инвестора</h1>
+            <p>Свердловская область | AI-агент для поддержки инвестиционной деятельности</p>
+        </header>
+        
+        <nav class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('practices')">📊 Лучшие практики</button>
+            <button class="nav-tab" onclick="showSection('opportunities')">💰 Инвествозможности</button>
+            <button class="nav-tab" onclick="showSection('support')">📋 Меры поддержки</button>
+            <button class="nav-tab" onclick="showSection('documents')">📄 Документы</button>
+            <button class="nav-tab" onclick="showSection('analysis')">📈 Анализ</button>
+        </nav>
+        
+        <!-- Секция: Лучшие практики -->
+        <section id="practices" class="content-section active">
+            <h2>Поиск лучших отраслевых практик</h2>
+            <p style="margin-bottom: 20px; color: #666;">Найдите успешные кейсы внедрения в других регионах</p>
+            
+            <div class="form-group">
+                <label>Отрасль</label>
+                <select id="practice-industry">
+                    <option value="металлургия">Металлургия</option>
+                    <option value="машиностроение">Машиностроение</option>
+                    <option value="химическая промышленность">Химическая промышленность</option>
+                    <option value="IT и цифровые технологии">IT и цифровые технологии</option>
+                    <option value="сельское хозяйство">Сельское хозяйство</option>
+                    <option value="логистика и транспорт">Логистика и транспорт</option>
+                </select>
+            </div>
+            
+            <button class="btn" onclick="searchPractices()">Найти практики</button>
+            
+            <div id="practices-results" class="results"></div>
+        </section>
+        
+        <!-- Секция: Инвествозможности -->
+        <section id="opportunities" class="content-section">
+            <h2>Поиск инвестиционных возможностей</h2>
+            <p style="margin-bottom: 20px; color: #666;">Готовые площадки и объекты для инвестиций</p>
+            
+            <div class="form-group">
+                <label>Отрасль</label>
+                <select id="opp-industry">
+                    <option value="">Все отрасли</option>
+                    <option value="металлургия">Металлургия</option>
+                    <option value="машиностроение">Машиностроение</option>
+                    <option value="IT и цифровые технологии">IT</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Мин. инвестиции (руб)</label>
+                <input type="number" id="opp-min-investment" value="10000000" step="1000000">
+            </div>
+            
+            <button class="btn" onclick="searchOpportunities()">Найти возможности</button>
+            
+            <div id="opportunities-results" class="results"></div>
+        </section>
+        
+        <!-- Секция: Меры поддержки -->
+        <section id="support" class="content-section">
+            <h2>Меры государственной поддержки</h2>
+            <p style="margin-bottom: 20px; color: #666;">Гранты, субсидии, налоговые льготы</p>
+            
+            <div class="form-group">
+                <label>Отрасль</label>
+                <select id="support-industry">
+                    <option value="металлургия">Металлургия</option>
+                    <option value="машиностроение">Машиностроение</option>
+                    <option value="IT и цифровые технологии">IT</option>
+                </select>
+            </div>
+            
+            <button class="btn" onclick="searchSupport()">Найти меры поддержки</button>
+            
+            <div id="support-results" class="results"></div>
+        </section>
+        
+        <!-- Секция: Документы -->
+        <section id="documents" class="content-section">
+            <h2>Подготовка документов</h2>
+            <p style="margin-bottom: 20px; color: #666;">Генерация и проверка пакета документов</p>
+            
+            <div class="form-group">
+                <label>Тип меры поддержки</label>
+                <select id="doc-type">
+                    <option value="grant">Грант</option>
+                    <option value="subsidy">Субсидия</option>
+                    <option value="fund">Инвестиционный фонд</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Наименование организации</label>
+                <input type="text" id="doc-applicant" placeholder="ООО 'Пример'">
+            </div>
+            
+            <div class="form-group">
+                <label>ИНН</label>
+                <input type="text" id="doc-inn" placeholder="6601000001">
+            </div>
+            
+            <button class="btn" onclick="prepareDocuments()">Подготовить пакет</button>
+            
+            <div id="documents-results" class="results"></div>
+        </section>
+        
+        <!-- Секция: Анализ -->
+        <section id="analysis" class="content-section">
+            <h2>Комплексный анализ отрасли</h2>
+            <p style="margin-bottom: 20px; color: #666;">Полный отчёт по инвестиционному потенциалу</p>
+            
+            <div class="form-group">
+                <label>Отрасль</label>
+                <select id="analysis-industry">
+                    <option value="металлургия">Металлургия</option>
+                    <option value="машиностроение">Машиностроение</option>
+                    <option value="IT и цифровые технологии">IT</option>
+                </select>
+            </div>
+            
+            <button class="btn" onclick="runAnalysis()">Запустить анализ</button>
+            
+            <div id="analysis-results" class="results"></div>
+        </section>
+        
+        <footer>
+            <p>© 2024 Помощник инвестора | Свердловская область</p>
+            <p>AI-агент для поддержки инвестиционной деятельности</p>
+        </footer>
+    </div>
+    
+    <script>
+        const API_BASE = '/api';
+        
+        // Переключение вкладок
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+        
+        // Утилита для запросов
+        async function apiRequest(endpoint, method = 'GET', data = null) {
+            const options = {
+                method,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+            
+            if (data) {
+                options.body = JSON.stringify(data);
+            }
+            
+            const response = await fetch(API_BASE + endpoint, options);
+            return await response.json();
+        }
+        
+        // Отображение загрузки
+        function showLoading(elementId) {
+            document.getElementById(elementId).innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Загрузка...</p>
+                </div>
+            `;
+        }
+        
+        // Отображение ошибки
+        function showError(elementId, message) {
+            document.getElementById(elementId).innerHTML = `
+                <div class="error">❌ ${message}</div>
+            `;
+        }
+        
+        // Поиск лучших практик
+        async function searchPractices() {
+            const industry = document.getElementById('practice-industry').value;
+            showLoading('practices-results');
+            
+            try {
+                const result = await apiRequest('/api/practices', 'POST', { industry });
+                
+                if (result.success) {
+                    let html = '';
+                    result.data.forEach(p => {
+                        const scoreClass = p.applicability_score >= 0.7 ? 'score-high' : 
+                                          p.applicability_score >= 0.4 ? 'score-medium' : 'score-low';
+                        
+                        html += `
+                            <div class="result-card">
+                                <h3>${p.name}</h3>
+                                <div class="meta">
+                                    <span>📍 ${p.region}</span>
+                                    <span>🏭 ${p.industry}</span>
+                                    <span class="${scoreClass}">📊 Применимость: ${(p.applicability_score * 100).toFixed(0)}%</span>
+                                </div>
+                                <p>${p.description}</p>
+                                <p><strong>Результаты:</strong> ${p.results}</p>
+                                ${p.recommendations.length > 0 ? `
+                                    <p><strong>Рекомендации:</strong></p>
+                                    <ul class="checklist">
+                                        ${p.recommendations.map(r => `<li>${r}</li>`).join('')}
+                                    </ul>
+                                ` : ''}
+                            </div>
+                        `;
+                    });
+                    
+                    document.getElementById('practices-results').innerHTML = html || '<p>Практики не найдены</p>';
+                } else {
+                    showError('practices-results', result.error);
+                }
+            } catch (e) {
+                showError('practices-results', e.message);
+            }
+        }
+        
+        // Поиск инвествозможностей
+        async function searchOpportunities() {
+            const industry = document.getElementById('opp-industry').value;
+            const minInvestment = parseFloat(document.getElementById('opp-min-investment').value);
+            showLoading('opportunities-results');
+            
+            try {
+                const result = await apiRequest('/api/opportunities', 'POST', { industry, min_investment: minInvestment });
+                
+                if (result.success) {
+                    let html = '';
+                    result.data.forEach(o => {
+                        html += `
+                            <div class="result-card">
+                                <h3>${o.title}</h3>
+                                <div class="meta">
+                                    <span>📍 ${o.location}</span>
+                                    <span>🏢 ${o.type}</span>
+                                    <span>💰 ${(o.investment_required / 1000000).toFixed(1)} млн ₽</span>
+                                </div>
+                                <p>${o.description}</p>
+                                ${o.potential_return ? `<p><strong>Доходность:</strong> ${o.potential_return}</p>` : ''}
+                            </div>
+                        `;
+                    });
+                    
+                    document.getElementById('opportunities-results').innerHTML = html || '<p>Возможности не найдены</p>';
+                } else {
+                    showError('opportunities-results', result.error);
+                }
+            } catch (e) {
+                showError('opportunities-results', e.message);
+            }
+        }
+        
+        // Поиск мер поддержки
+        async function searchSupport() {
+            const industry = document.getElementById('support-industry').value;
+            showLoading('support-results');
+            
+            try {
+                const result = await apiRequest('/api/support-measures', 'POST', { industry });
+                
+                if (result.success) {
+                    let html = '';
+                    result.data.forEach(m => {
+                        const typeIcons = {
+                            'grant': '💰',
+                            'subsidy': '📋',
+                            'tax_benefit': '📉',
+                            'guarantee': '🛡️'
+                        };
+                        
+                        html += `
+                            <div class="result-card">
+                                <h3>${typeIcons[m.type] || '📄'} ${m.name}</h3>
+                                <div class="meta">
+                                    <span>Тип: ${m.type}</span>
+                                    <span>💵 до ${(m.max_amount / 1000000).toFixed(1)} млн ₽</span>
+                                    ${m.deadline ? `<span>📅 До: ${m.deadline}</span>` : ''}
+                                </div>
+                                <p>${m.description}</p>
+                                <p><strong>Требования:</strong></p>
+                                <ul class="checklist">
+                                    ${m.eligibility.map(e => `<li>${e}</li>`).join('')}
+                                </ul>
+                                <p><strong>Документы:</strong> ${m.documents_required.join(', ')}</p>
+                                <p><strong>Контакты:</strong> ${m.contact_info}</p>
+                            </div>
+                        `;
+                    });
+                    
+                    document.getElementById('support-results').innerHTML = html || '<p>Меры поддержки не найдены</p>';
+                } else {
+                    showError('support-results', result.error);
+                }
+            } catch (e) {
+                showError('support-results', e.message);
+            }
+        }
+        
+        // Подготовка документов
+        async function prepareDocuments() {
+            const measureType = document.getElementById('doc-type').value;
+            const applicant = document.getElementById('doc-applicant').value;
+            const inn = document.getElementById('doc-inn').value;
+            
+            if (!applicant || !inn) {
+                showError('documents-results', 'Заполните все поля');
+                return;
+            }
+            
+            showLoading('documents-results');
+            
+            try {
+                const projectData = {
+                    applicant_name: applicant,
+                    inn: inn,
+                    project_name: "Инвестиционный проект",
+                    investment_amount: 50000000,
+                    grant_amount: 15000000,
+                    jobs_created: 25,
+                    description: "Реализация инвестиционного проекта"
+                };
+                
+                const result = await apiRequest('/api/documents/package', 'POST', {
+                    measure_name: "Грант на развитие производства",
+                    measure_type: measureType,
+                    project_data: projectData
+                });
+                
+                if (result.success) {
+                    const pkg = result.data;
+                    let html = `
+                        <div class="result-card">
+                            <h3>📦 Пакет документов: ${pkg.package_id}</h3>
+                            <div class="meta">
+                                <span>Мера: ${pkg.measure_name}</span>
+                                <span>Статус: ${pkg.status}</span>
+                            </div>
+                            <p><strong>Документы:</strong></p>
+                            <ul class="checklist">
+                                ${pkg.documents.map(d => `
+                                    <li>${d.filename} (${d.status})</li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `;
+                    
+                    document.getElementById('documents-results').innerHTML = html;
+                } else {
+                    showError('documents-results', result.error);
+                }
+            } catch (e) {
+                showError('documents-results', e.message);
+            }
+        }
+        
+        // Комплексный анализ
+        async function runAnalysis() {
+            const industry = document.getElementById('analysis-industry').value;
+            showLoading('analysis-results');
+            
+            try {
+                const result = await apiRequest('/api/analysis/full', 'POST', { industry });
+                
+                if (result.success) {
+                    const data = result.data;
+                    let html = `
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <h3>${data.sections.best_practices.length}</h3>
+                                <p>Лучших практик</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>${data.sections.opportunities.length}</h3>
+                                <p>Инвестплощадок</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>${data.sections.support_measures.length}</h3>
+                                <p>Мер поддержки</p>
+                            </div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <h3>📋 Рекомендации</h3>
+                            <ul class="checklist">
+                                ${data.sections.recommendations.map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                    
+                    document.getElementById('analysis-results').innerHTML = html;
+                } else {
+                    showError('analysis-results', result.error);
+                }
+            } catch (e) {
+                showError('analysis-results', e.message);
+            }
+        }
+        
+        // Проверка здоровья API при загрузке
+        window.addEventListener('load', async () => {
+            try {
+                const response = await fetch(API_BASE + '/health');
+                const data = await response.json();
+                console.log('API Status:', data.status);
+            } catch (e) {
+                console.error('API not available:', e);
+            }
+        });
+    </script>
+</body>
+</html>
