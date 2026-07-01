@@ -1,0 +1,146 @@
+# ============================================================
+# Docker Compose для Investor Agent
+# Локальная разработка и тестирование
+# ============================================================
+
+version: '3.8'
+
+services:
+  # ============================================================
+  # Web API
+  # ============================================================
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: investor-agent-api
+    ports:
+      - "5000:5000"
+    environment:
+      - ENVIRONMENT=development
+      - DEBUG=True
+      - WEB_HOST=0.0.0.0
+      - WEB_PORT=5000
+      - DATABASE_URL=sqlite+aiosqlite:///data/dev.db
+      - LOG_LEVEL=DEBUG
+      - SEARCH_PROVIDER=mock
+      - RATE_LIMIT_PER_MINUTE=1000
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+      - ./output:/app/output
+      - ./data:/app/data
+      - ./mcp_servers/data:/app/mcp_servers/data
+    depends_on:
+      - redis
+    networks:
+      - investor_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:5000/api/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # ============================================================
+  # Redis для кэширования
+  # ============================================================
+  redis:
+    image: redis:7-alpine
+    container_name: investor-agent-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - investor_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================
+  # PostgreSQL для production-like тестирования
+  # ============================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: investor-agent-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=investor_agent
+      - POSTGRES_USER=investor
+      - POSTGRES_PASSWORD=investor_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - investor_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U investor"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================
+  # pgAdmin для управления БД (опционально)
+  # ============================================================
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: investor-agent-pgadmin
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@example.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - investor_network
+    restart: unless-stopped
+    depends_on:
+      - postgres
+
+  # ============================================================
+  # MCP Серверы (опционально)
+  # ============================================================
+  mcp-support:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: investor-agent-mcp-support
+    command: python mcp_servers/support_measures_server.py
+    volumes:
+      - ./mcp_servers/data:/app/mcp_servers/data
+    networks:
+      - investor_network
+    restart: unless-stopped
+    profiles:
+      - mcp
+
+# ============================================================
+# Сети
+# ============================================================
+networks:
+  investor_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
+
+# ============================================================
+| Томa
+# ============================================================
+volumes:
+  redis_data:
+    driver: local
+  postgres_data:
+    driver: local
+  pgadmin_data:
+    driver: local

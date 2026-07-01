@@ -1,0 +1,711 @@
+# ============================================================
+# OpenAPI/Swagger документация для Investor Agent API
+# Версия: 1.0.0
+# ============================================================
+
+openapi: 3.0.3
+info:
+  title: Investor Agent API
+  description: |
+    API для AI-агента помощника инвестора в Свердловской области
+    
+    ## Возможности:
+    - Поиск лучших отраслевых практик
+    - Поиск инвестиционных возможностей
+    - Подбор мер господдержки
+    - Подготовка документов
+    - Комплексный анализ отрасли
+    
+    ## Аутентификация:
+    API использует API ключи для аутентификации. 
+    Ключ должен быть передан в заголовке `X-API-Key`.
+    
+    Для получения ключа обратитесь к администратору.
+    
+    ## Rate Limiting:
+    - Default: 60 запросов в минуту
+    - С API ключом: 1000 запросов в минуту
+    
+    ## Ошибки:
+    API возвращает ошибки в формате:
+    ```json
+    {
+      "success": false,
+      "error": "Описание ошибки",
+      "details": {},
+      "timestamp": "2024-01-01T00:00:00"
+    }
+    ```
+  version: 1.0.0
+  contact:
+    name: NLP-Core-Team Support
+    email: support@investor-agent.ru
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:5000
+    description: Development server
+  - url: https://api.investor-agent.ru
+    description: Production server
+
+tags:
+  - name: Health
+    description: Проверка работоспособности API
+  - name: Practices
+    description: Лучшие отраслевые практики
+  - name: Opportunities
+    description: Инвестиционные возможности
+  - name: Support Measures
+    description: Меры государственной поддержки
+  - name: Documents
+    description: Подготовка и верификация документов
+  - name: Analysis
+    description: Комплексный анализ отрасли
+
+paths:
+  /api/health:
+    get:
+      tags:
+        - Health
+      summary: Проверка здоровья API
+      description: Возвращает статус работоспособности API
+      operationId: healthCheck
+      responses:
+        '200':
+          description: API работает
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+  
+  /api/region:
+    get:
+      tags:
+        - Health
+      summary: Информация о регионе
+      description: Возвращает информацию о целевом регионе
+      operationId: getRegionInfo
+      responses:
+        '200':
+          description: Информация о регионе
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegionResponse'
+  
+  /api/practices:
+    post:
+      tags:
+        - Practices
+      summary: Поиск лучших практик
+      description: Поиск и анализ лучших отраслевых практик
+      operationId: findBestPractices
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PracticeRequest'
+      responses:
+        '200':
+          description: Успешный поиск
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PracticesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+  
+  /api/opportunities:
+    post:
+      tags:
+        - Opportunities
+      summary: Поиск инвестиционных возможностей
+      description: Поиск инвестиционных площадок и объектов
+      operationId: findInvestmentOpportunities
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpportunityRequest'
+      responses:
+        '200':
+          description: Успешный поиск
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpportunitiesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+  
+  /api/support-measures:
+    post:
+      tags:
+        - Support Measures
+      summary: Поиск мер поддержки
+      description: Поиск мер государственной поддержки для бизнеса
+      operationId: findSupportMeasures
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SupportMeasuresRequest'
+      responses:
+        '200':
+          description: Успешный поиск
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupportMeasuresResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+  
+  /api/proposal:
+    post:
+      tags:
+        - Opportunities
+      summary: Создание инвестиционного предложения
+      description: Формирование полного инвестиционного предложения
+      operationId: createInvestmentProposal
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProposalRequest'
+      responses:
+        '200':
+          description: Предложение создано
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProposalResponse'
+        '404':
+          description: Возможности не найдены
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  
+  /api/documents/package:
+    post:
+      tags:
+        - Documents
+      summary: Подготовка пакета документов
+      description: Генерация пакета документов для меры поддержки
+      operationId: prepareDocumentsPackage
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocumentsPackageRequest'
+      responses:
+        '200':
+          description: Пакет подготовлен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentsPackageResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  
+  /api/documents/checklist:
+    get:
+      tags:
+        - Documents
+      summary: Чек-лист документов
+      description: Получение списка необходимых документов
+      operationId: getDocumentsChecklist
+      parameters:
+        - name: measure_type
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [grant, subsidy, fund]
+            default: grant
+      responses:
+        '200':
+          description: Чек-лист получен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChecklistResponse'
+  
+  /api/analysis/full:
+    post:
+      tags:
+        - Analysis
+      summary: Комплексный анализ
+      description: Полный анализ отрасли с рекомендациями
+      operationId: fullInvestmentAnalysis
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnalysisRequest'
+      responses:
+        '200':
+          description: Анализ выполнен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FullAnalysisResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API ключ для доступа к endpoint'ам
+  
+  schemas:
+    # Request schemas
+    PracticeRequest:
+      type: object
+      required:
+        - industry
+      properties:
+        industry:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: "металлургия"
+        practice_type:
+          type: string
+          enum: [all, технологии, управление, финансы, производство]
+          default: all
+    
+    OpportunityRequest:
+      type: object
+      properties:
+        industry:
+          type: string
+          maxLength: 100
+          example: "металлургия"
+        min_investment:
+          type: number
+          minimum: 0
+          default: 0
+          example: 10000000
+        location:
+          type: string
+          maxLength: 200
+          example: "Екатеринбург"
+    
+    SupportMeasuresRequest:
+      type: object
+      required:
+        - industry
+      properties:
+        industry:
+          type: string
+          minLength: 1
+          maxLength: 100
+        business_size:
+          type: string
+          enum: [small, medium, large, smo]
+          default: medium
+    
+    ProposalRequest:
+      type: object
+      required:
+        - industry
+      properties:
+        opportunity_id:
+          type: string
+          maxLength: 100
+        industry:
+          type: string
+          minLength: 1
+          maxLength: 100
+    
+    DocumentsPackageRequest:
+      type: object
+      required:
+        - measure_name
+        - measure_type
+        - project_data
+      properties:
+        measure_name:
+          type: string
+          minLength: 1
+          maxLength: 200
+        measure_type:
+          type: string
+          enum: [grant, subsidy, fund]
+        project_data:
+          $ref: '#/components/schemas/ProjectData'
+    
+    ProjectData:
+      type: object
+      required:
+        - applicant_name
+        - inn
+        - ogrn
+        - address
+        - contact_email
+        - project_name
+        - industry
+        - investment_amount
+      properties:
+        applicant_name:
+          type: string
+          minLength: 1
+          maxLength: 200
+        inn:
+          type: string
+          pattern: '^\\d{10}$'
+          example: "6601000001"
+        ogrn:
+          type: string
+          pattern: '^\\d{13}$'
+          example: "1026600000001"
+        address:
+          type: string
+          maxLength: 500
+        contact_phone:
+          type: string
+          pattern: '^[\\d\\+\\-\\(\\)\\s]{10,20}$'
+        contact_email:
+          type: string
+          format: email
+        project_name:
+          type: string
+          minLength: 1
+          maxLength: 200
+        industry:
+          type: string
+          minLength: 1
+          maxLength: 100
+        description:
+          type: string
+          maxLength: 2000
+        investment_amount:
+          type: number
+          minimum: 0
+        grant_amount:
+          type: number
+          minimum: 0
+        jobs_created:
+          type: integer
+          minimum: 0
+        implementation_period:
+          type: integer
+          minimum: 1
+    
+    AnalysisRequest:
+      type: object
+      required:
+        - industry
+      properties:
+        industry:
+          type: string
+          minLength: 1
+          maxLength: 100
+        min_investment:
+          type: number
+          minimum: 0
+          default: 10000000
+    
+    # Response schemas
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "ok"
+        timestamp:
+          type: string
+          format: date-time
+        region:
+          type: string
+          example: "Свердловская область"
+        version:
+          type: string
+          example: "1.0.0"
+    
+    RegionResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+        capital:
+          type: string
+    
+    PracticesResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          type: object
+          properties:
+            count:
+              type: integer
+            practices:
+              type: array
+              items:
+                $ref: '#/components/schemas/Practice'
+    
+    Practice:
+      type: object
+      properties:
+        name:
+          type: string
+        region:
+          type: string
+        industry:
+          type: string
+        description:
+          type: string
+        results:
+          type: string
+        applicability_score:
+          type: number
+          format: float
+        implementation_cost:
+          type: string
+        recommendations:
+          type: array
+          items:
+            type: string
+    
+    OpportunitiesResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          type: object
+          properties:
+            count:
+              type: integer
+            opportunities:
+              type: array
+              items:
+                $ref: '#/components/schemas/Opportunity'
+    
+    Opportunity:
+      type: object
+      properties:
+        title:
+          type: string
+        type:
+          type: string
+        location:
+          type: string
+        industry:
+          type: string
+        investment_required:
+          type: number
+        description:
+          type: string
+        potential_return:
+          type: string
+        status:
+          type: string
+    
+    SupportMeasuresResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          type: object
+          properties:
+            count:
+              type: integer
+            measures:
+              type: array
+              items:
+                $ref: '#/components/schemas/SupportMeasure'
+    
+    SupportMeasure:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        max_amount:
+          type: number
+        min_amount:
+          type: number
+        description:
+          type: string
+        eligibility:
+          type: string
+        documents_required:
+          type: array
+          items:
+            type: string
+        deadline:
+          type: string
+          format: date
+        contact_info:
+          type: string
+    
+    ProposalResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          $ref: '#/components/schemas/Proposal'
+    
+    Proposal:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        total_investment:
+          type: number
+        own_funds_required:
+          type: number
+        support_funds_available:
+          type: number
+        payback_period:
+          type: number
+          format: float
+        roi:
+          type: number
+          format: float
+        implementation_plan:
+          type: array
+          items:
+            type: object
+        risks:
+          type: array
+          items:
+            type: string
+        recommendations:
+          type: array
+          items:
+            type: string
+    
+    DocumentsPackageResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          type: object
+          properties:
+            package_id:
+              type: string
+            measure_name:
+              type: string
+            status:
+              type: string
+            documents:
+              type: array
+              items:
+                type: object
+    
+    ChecklistResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        measure_type:
+          type: string
+        checklist:
+          type: array
+          items:
+            type: string
+    
+    FullAnalysisResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          type: object
+          properties:
+            industry:
+              type: string
+            region:
+              type: string
+            timestamp:
+              type: string
+              format: date-time
+            sections:
+              type: object
+  
+  responses:
+    BadRequest:
+      description: Ошибка валидации данных
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    
+    RateLimitExceeded:
+      description: Превышен лимит запросов
+      headers:
+        X-RateLimit-Limit:
+          schema:
+            type: integer
+          description: Максимальное количество запросов
+        X-RateLimit-Remaining:
+          schema:
+            type: integer
+          description: Оставшиеся запросы
+        X-RateLimit-Reset:
+          schema:
+            type: integer
+          description: Секунд до сброса
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    
+    ErrorResponse:
+      description: Ответ с ошибкой
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                example: false
+              error:
+                type: string
+              details:
+                type: object
+              timestamp:
+                type: string
+                format: date-time

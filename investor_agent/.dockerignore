@@ -1,0 +1,118 @@
+# ============================================================
+# .dockerignore для Investor Agent
+# Исключение файлов из Docker сборки
+# ============================================================
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Виртуальные окружения
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Тесты и покрытие
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Логи и данные
+logs/
+*.log
+output/
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# MCP данные
+mcp_servers/data/
+
+# Документация
+docs/
+*.md
+!README.md
+IMPROVEMENT_GUIDE.md
+CRITICAL_CHANGES_SUMMARY.md
+HIGH_PRIORITY_CHANGES_SUMMARY.md
+MEDIUM_PRIORITY_CHANGES_SUMMARY.md
+SETUP_GUIDE.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+Jenkinsfile
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.docker/
+.dockerignore
+
+# Прочее
+*.bak
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+*.orig
+*.patch
+*.diff
+
+# Секреты
+.secrets.baseline
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+
+# Временные файлы
+tmp/
+temp/
+.cache/
