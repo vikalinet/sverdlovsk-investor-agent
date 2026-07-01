@@ -68,6 +68,8 @@ class DatabaseModule:
     - Реестр мер господдержки
     - База инвестиционных объектов
     - Реестр предприятий
+    
+    При отсутствии подключения к MCP использует локальные SQLite базы
     """
     
     def __init__(self):
@@ -75,8 +77,10 @@ class DatabaseModule:
         self.sessions: dict[str, ClientSession] = {}
         self.contexts: dict[str, Any] = {}
         self.target_region = REGION["name"]
+        self.mcp_available = MCP_AVAILABLE
+        self.mcp_connected = False
         
-        logger.info(f"DatabaseModule инициализирован. MCP доступен: {MCP_AVAILABLE}")
+        logger.info(f"DatabaseModule инициализирован. MCP SDK: {self.mcp_available}")
     
     async def connect_to_mcp_server(
         self,

@@ -13,6 +13,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import SEARCH_CONFIG, REGION
 
+# Поиск API клиент
+try:
+    from .search_api_client import SearchAPIClient
+except ImportError:
+    SearchAPIClient = None
+
 
 @dataclass
 class SearchResult:
@@ -61,14 +67,23 @@ class SearchModule:
     - Мер государственной поддержки
     """
     
-    def __init__(self, api_key: str = ""):
+    def __init__(self, api_key: str = "", search_provider: str = "mock"):
         self.api_key = api_key or SEARCH_CONFIG.get("api_key", "")
         self.max_results = SEARCH_CONFIG.get("max_results", 10)
         self.compare_regions = SEARCH_CONFIG.get("regions_to_compare", [])
         self.target_region = REGION["name"]
         self.session: Optional[aiohttp.ClientSession] = None
+        self.search_provider = search_provider
         
-        logger.info(f"SearchModule инициализирован для региона: {self.target_region}")
+        # Инициализация API клиента
+        self.api_client = None
+        if SearchAPIClient:
+            self.api_client = SearchAPIClient(
+                provider=search_provider,
+                api_key=self.api_key
+            )
+        
+        logger.info(f"SearchModule инициализирован для региона: {self.target_region}, provider={search_provider}")
     
     async def __aenter__(self):
         self.session = aiohttp.ClientSession()
@@ -119,25 +134,36 @@ class SearchModule:
         practice_type: str
     ) -> list[BestPractice]:
         """Поиск практик в конкретном регионе"""
-        # Заглушка для реальной реализации
-        # В продакшене здесь будут вызовы к поисковым API и базам данных
-        
         query = f"лучшие практики {industry} {region}"
         logger.debug(f"Поисковый запрос: {query}")
         
-        # Имитация результатов (для прототипа)
         practices = []
         
-        # Пример данных
-        practices.append(BestPractice(
-            name=f"Цифровизация {industry.lower()} в {region}",
-            region=region,
-            industry=industry,
-            description=f"Внедрение цифровых технологий в {industry}...",
-            results="Рост производительности на 25%",
-            applicability_score=0.0,  # Будет рассчитан
-            implementation_cost="50-100 млн руб"
-        ))
+        # Использование API если доступен
+        if self.api_client:
+            search_results = await self.api_client.search(query, region=region)
+            for result in search_results[:3]:  # Берём топ-3
+                practices.append(BestPractice(
+                    name=result.title,
+                    region=region,
+                    industry=industry,
+                    description=result.snippet,
+                    results="Данные из поискового запроса",
+                    applicability_score=0.0,
+                    implementation_cost="Требует уточнения",
+                    contacts=result.url
+                ))
+        else:
+            # Имитация результатов (для прототипа)
+            practices.append(BestPractice(
+                name=f"Цифровизация {industry.lower()} в {region}",
+                region=region,
+                industry=industry,
+                description=f"Внедрение цифровых технологий в {industry}...",
+                results="Рост производительности на 25%",
+                applicability_score=0.0,
+                implementation_cost="50-100 млн руб"
+            ))
         
         return practices
     
