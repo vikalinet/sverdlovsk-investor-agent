@@ -2,8 +2,6 @@
 Flask API для агента-помощника инвестора
 """
 import asyncio
-import json
-import os
 import sys
 from pathlib import Path
 from datetime import datetime
@@ -16,21 +14,52 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.agent import InvestorAgent
 from config import REGION
+from web.schemas import (
+    PracticeRequest,
+    OpportunityRequest,
+    SupportMeasuresRequest,
+    DocumentsPackageRequest,
+    AnalysisRequest,
+    ProposalRequest,
+    success_response,
+    error_response
+)
+from web.error_handlers import (
+    handle_api_errors,
+    validate_json,
+    register_error_handlers,
+    APIError,
+    ValidationError,
+    NotFoundError
+)
 
 # Создание Flask приложения
 app = Flask(__name__, static_folder='static', static_url_path='')
-CORS(app)  # Разрешаем CORS для React
+
+# Настройка CORS с безопасными настройками
+CORS(
+    app,
+    origins=["http://localhost:3000", "http://127.0.0.1:3000"],  # Ограничить в production
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization", "X-API-Key"],
+    supports_credentials=True,
+    max_age=3600
+)
 
 # Настройка JSON для корректной кодировки UTF-8 (Flask 3.x)
 app.json.ensure_ascii = False  # Разрешаем Unicode символы
 app.json.sort_keys = False  # Сохраняем порядок ключей
+
+# Регистрация глобальных обработчиков ошибок
+register_error_handlers(app)
 
 # Настройка логирования
 logger.add(
     "logs/web_api.log",
     rotation="10 MB",
     retention="30 days",
-    level="INFO"
+    level="INFO",
+    format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {name}:{function}:{line} - {message}"
 )
 
 # Инициализация агента
@@ -54,7 +83,7 @@ def health_check():
         "timestamp": datetime.now().isoformat(),
         "region": REGION["name"],
         "version": "1.0.0"
-    })
+    }), 200
 
 
 @app.route('/api/region', methods=['GET'])
@@ -68,6 +97,8 @@ def get_region_info():
 
 
 @app.route('/api/practices', methods=['POST'])
+@validate_json
+@handle_api_errors
 def find_best_practices():
     """
     Поиск лучших отраслевых практик
@@ -78,51 +109,50 @@ def find_best_practices():
         "practice_type": "all"
     }
     """
+    data = request.get_json()
+    
+    # Валидация через Pydantic
     try:
-        data = request.get_json()
-        industry = data.get('industry', 'металлургия')
-        practice_type = data.get('practice_type', 'all')
-        
-        logger.info(f"Поиск практик: industry={industry}")
-        
-        # Запуск асинхронного запроса
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
+        validated = PracticeRequest(**data)
+    except ValueError as e:
+        raise ValidationError(str(e))
+    
+    logger.info(f"Поиск практик: industry={validated.industry}, type={validated.practice_type}")
+    
+    # Запуск асинхронного запроса
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
         practices = loop.run_until_complete(
-            agent.find_best_practices(industry, practice_type)
+            agent.find_best_practices(validated.industry, validated.practice_type)
         )
+    finally:
         loop.close()
         
-        # Форматирование результатов
-        results = []
-        for p in practices[:10]:  # Топ-10
-            results.append({
-                "name": p.practice.name,
-                "region": p.practice.region,
-                "industry": p.practice.industry,
-                "description": p.practice.description[:200],
-                "results": p.practice.results,
-                "applicability_score": round(p.applicability_score, 3),
-                "implementation_cost": p.practice.implementation_cost,
-                "recommendations": p.adaptation_recommendations[:3],
-                "risks": p.risks[:3]
-            })
-        
-        return jsonify({
-            "success": True,
-            "count": len(results),
-            "data": results
+    # Форматирование результатов
+    results = []
+    for p in practices[:10]:  # Топ-10
+        results.append({
+            "name": p.practice.name,
+            "region": p.practice.region,
+            "industry": p.practice.industry,
+            "description": p.practice.description[:200] if p.practice.description else "",
+            "results": p.practice.results,
+            "applicability_score": round(p.applicability_score, 3),
+            "implementation_cost": p.practice.implementation_cost,
+            "recommendations": p.adaptation_recommendations[:3],
+            "risks": p.risks[:3] if hasattr(p, 'risks') else []
         })
-        
-    except Exception as e:
-        logger.error(f"Ошибка поиска практик: {e}")
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+    
+    return jsonify(success_response({
+        "count": len(results),
+        "practices": results
+    }))
 
 
 @app.route('/api/opportunities', methods=['POST'])
+@validate_json
+@handle_api_errors
 def find_investment_opportunities():
     """
     Поиск инвестиционных возможностей
@@ -134,53 +164,51 @@ def find_investment_opportunities():
         "location": "Екатеринбург"
     }
     """
+    data = request.get_json()
+    
+    # Валидация через Pydantic
     try:
-        data = request.get_json()
-        industry = data.get('industry')
-        min_investment = data.get('min_investment', 0)
-        location = data.get('location')
-        
-        logger.info(f"Поиск возможностей: {industry}, {min_investment}")
-        
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
+        validated = OpportunityRequest(**data)
+    except ValueError as e:
+        raise ValidationError(str(e))
+    
+    logger.info(f"Поиск возможностей: industry={validated.industry}, min={validated.min_investment}")
+    
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
         opportunities = loop.run_until_complete(
             agent.find_investment_opportunities(
-                industry=industry,
-                min_investment=min_investment,
-                location=location
+                industry=validated.industry,
+                min_investment=validated.min_investment,
+                location=validated.location
             )
         )
+    finally:
         loop.close()
         
-        results = []
-        for opp in opportunities:
-            results.append({
-                "title": opp.title,
-                "type": opp.type,
-                "location": opp.location,
-                "industry": opp.industry,
-                "investment_required": opp.investment_required,
-                "description": opp.description,
-                "potential_return": opp.potential_return,
-                "status": opp.status
-            })
-        
-        return jsonify({
-            "success": True,
-            "count": len(results),
-            "data": results
+    results = []
+    for opp in opportunities:
+        results.append({
+            "title": opp.title,
+            "type": opp.type,
+            "location": opp.location,
+            "industry": opp.industry,
+            "investment_required": opp.investment_required,
+            "description": opp.description,
+            "potential_return": opp.potential_return,
+            "status": opp.status
         })
-        
-    except Exception as e:
-        logger.error(f"Ошибка поиска возможностей: {e}")
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+    
+    return jsonify(success_response({
+        "count": len(results),
+        "opportunities": results
+    }))
 
 
 @app.route('/api/support-measures', methods=['POST'])
+@validate_json
+@handle_api_errors
 def find_support_measures():
     """
     Поиск мер господдержки
@@ -191,50 +219,49 @@ def find_support_measures():
         "business_size": "medium"
     }
     """
+    data = request.get_json()
+    
+    # Валидация через Pydantic
     try:
-        data = request.get_json()
-        industry = data.get('industry', 'металлургия')
-        business_size = data.get('business_size', 'medium')
-        
-        logger.info(f"Поиск мер поддержки: {industry}")
-        
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
+        validated = SupportMeasuresRequest(**data)
+    except ValueError as e:
+        raise ValidationError(str(e))
+    
+    logger.info(f"Поиск мер поддержки: industry={validated.industry}, size={validated.business_size}")
+    
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
         measures = loop.run_until_complete(
-            agent.find_support_measures(industry, business_size)
+            agent.find_support_measures(validated.industry, validated.business_size)
         )
+    finally:
         loop.close()
         
-        results = []
-        for m in measures:
-            results.append({
-                "id": m.id,
-                "name": m.name,
-                "type": m.type,
-                "max_amount": m.max_amount,
-                "min_amount": m.min_amount,
-                "description": m.description,
-                "eligibility": m.eligibility,
-                "documents_required": m.documents_required,
-                "deadline": m.deadline,
-                "contact_info": m.contact_info
-            })
-        
-        return jsonify({
-            "success": True,
-            "count": len(results),
-            "data": results
+    results = []
+    for m in measures:
+        results.append({
+            "id": m.id,
+            "name": m.name,
+            "type": m.type,
+            "max_amount": m.max_amount,
+            "min_amount": m.min_amount,
+            "description": m.description,
+            "eligibility": m.eligibility,
+            "documents_required": m.documents_required,
+            "deadline": m.deadline,
+            "contact_info": m.contact_info
         })
-        
-    except Exception as e:
-        logger.error(f"Ошибка поиска мер поддержки: {e}")
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+    
+    return jsonify(success_response({
+        "count": len(results),
+        "measures": results
+    }))
 
 
 @app.route('/api/proposal', methods=['POST'])
+@validate_json
+@handle_api_errors
 def create_investment_proposal():
     """
     Создание инвестиционного предложения
@@ -245,60 +272,54 @@ def create_investment_proposal():
         "industry": "металлургия"
     }
     """
+    data = request.get_json()
+    
+    # Валидация через Pydantic
     try:
-        data = request.get_json()
-        industry = data.get('industry', 'металлургия')
-        opportunity_id = data.get('opportunity_id')
-        
-        logger.info(f"Создание предложения: {opportunity_id}")
-        
+        validated = ProposalRequest(**data)
+    except ValueError as e:
+        raise ValidationError(str(e))
+    
+    logger.info(f"Создание предложения: industry={validated.industry}")
+    
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
         # Получаем возможность
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
         opportunities = loop.run_until_complete(
-            agent.find_investment_opportunities(industry=industry)
+            agent.find_investment_opportunities(industry=validated.industry)
         )
         
         if not opportunities:
-            return jsonify({
-                "success": False,
-                "error": "Возможности не найдены"
-            }), 404
+            raise NotFoundError("Инвестиционные возможности не найдены")
         
         opportunity = opportunities[0]  # Берём первую
         
         proposal = loop.run_until_complete(
-            agent.create_investment_proposal(opportunity, industry)
+            agent.create_investment_proposal(opportunity, validated.industry)
         )
+    finally:
         loop.close()
         
-        result = {
-            "id": proposal.id,
-            "title": proposal.title,
-            "total_investment": proposal.total_investment,
-            "own_funds_required": proposal.own_funds_required,
-            "support_funds_available": proposal.support_funds_available,
-            "payback_period": round(proposal.payback_period, 2),
-            "roi": round(proposal.roi, 2),
-            "implementation_plan": proposal.implementation_plan,
-            "risks": proposal.risks,
-            "recommendations": proposal.recommendations
-        }
-        
-        return jsonify({
-            "success": True,
-            "data": result
-        })
-        
-    except Exception as e:
-        logger.error(f"Ошибка создания предложения: {e}")
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+    result = {
+        "id": proposal.id,
+        "title": proposal.title,
+        "total_investment": proposal.total_investment,
+        "own_funds_required": proposal.own_funds_required,
+        "support_funds_available": proposal.support_funds_available,
+        "payback_period": round(proposal.payback_period, 2),
+        "roi": round(proposal.roi, 2),
+        "implementation_plan": proposal.implementation_plan,
+        "risks": proposal.risks,
+        "recommendations": proposal.recommendations
+    }
+    
+    return jsonify(success_response(result))
 
 
 @app.route('/api/documents/package', methods=['POST'])
+@validate_json
+@handle_api_errors
 def prepare_documents_package():
     """
     Подготовка пакета документов
@@ -314,50 +335,44 @@ def prepare_documents_package():
         }
     }
     """
+    data = request.get_json()
+    
+    # Валидация через Pydantic
     try:
-        data = request.get_json()
-        measure_name = data.get('measure_name')
-        measure_type = data.get('measure_type', 'grant')
-        project_data = data.get('project_data', {})
-        
-        logger.info(f"Подготовка документов: {measure_name}")
-        
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
+        validated = DocumentsPackageRequest(**data)
+    except ValueError as e:
+        raise ValidationError(str(e), details={"field": "project_data"})
+    
+    logger.info(f"Подготовка документов: {validated.measure_name}")
+    
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
         package = loop.run_until_complete(
             agent.prepare_documents_package(
-                measure_name=measure_name,
-                measure_type=measure_type,
-                project_data=project_data
+                measure_name=validated.measure_name,
+                measure_type=validated.measure_type,
+                project_data=validated.project_data.model_dump()
             )
         )
         
         verification = loop.run_until_complete(
             agent.verify_documents(package)
         )
+    finally:
         loop.close()
         
-        result = {
-            "package_id": package.id,
-            "measure_name": package.measure_name,
-            "measure_type": package.measure_type,
-            "status": package.status,
-            "created_at": package.created_at,
-            "documents": package.documents,
-            "validation": verification
-        }
-        
-        return jsonify({
-            "success": True,
-            "data": result
-        })
-        
-    except Exception as e:
-        logger.error(f"Ошибка подготовки документов: {e}")
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+    result = {
+        "package_id": package.id,
+        "measure_name": package.measure_name,
+        "measure_type": package.measure_type,
+        "status": package.status,
+        "created_at": package.created_at,
+        "documents": package.documents,
+        "validation": verification
+    }
+    
+    return jsonify(success_response(result))
 
 
 @app.route('/api/documents/checklist', methods=['GET'])
@@ -388,6 +403,8 @@ def get_documents_checklist():
 
 
 @app.route('/api/analysis/full', methods=['POST'])
+@validate_json
+@handle_api_errors
 def full_investment_analysis():
     """
     Комплексный анализ отрасли
@@ -398,31 +415,26 @@ def full_investment_analysis():
         "min_investment": 50000000
     }
     """
+    data = request.get_json()
+    
+    # Валидация через Pydantic
     try:
-        data = request.get_json()
-        industry = data.get('industry', 'металлургия')
-        min_investment = data.get('min_investment', 10_000_000)
-        
-        logger.info(f"Комплексный анализ: {industry}")
-        
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
+        validated = AnalysisRequest(**data)
+    except ValueError as e:
+        raise ValidationError(str(e))
+    
+    logger.info(f"Комплексный анализ: industry={validated.industry}")
+    
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
         analysis = loop.run_until_complete(
-            agent.full_investment_analysis(industry, min_investment)
+            agent.full_investment_analysis(validated.industry, validated.min_investment)
         )
+    finally:
         loop.close()
-        
-        return jsonify({
-            "success": True,
-            "data": analysis
-        })
-        
-    except Exception as e:
-        logger.error(f"Ошибка комплексного анализа: {e}")
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+    
+    return jsonify(success_response(analysis))
 
 
 @app.route('/api/mcp/status', methods=['GET'])
@@ -490,15 +502,41 @@ def internal_error(error):
     }), 500
 
 
+# ==================== Middleware ====================
+
+@app.before_request
+def before_request():
+    """Логирование запросов"""
+    from web.error_handlers import log_request_info
+    log_request_info()
+
+
+@app.after_request
+def add_security_headers(response):
+    """Добавление security headers"""
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['X-Frame-Options'] = 'DENY'
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    response.headers['Content-Security-Policy'] = "default-src 'self'"
+    response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
+    response.headers['Pragma'] = 'no-cache'
+    return response
+
+
 # ==================== Main ====================
 
 if __name__ == '__main__':
     # Создание директорий
     Path("logs").mkdir(exist_ok=True)
     Path("web/static").mkdir(exist_ok=True)
+    Path("output/documents").mkdir(parents=True, exist_ok=True)
+    Path("output/reports").mkdir(parents=True, exist_ok=True)
     
     logger.info("Запуск Flask API...")
     logger.info(f"Регион: {REGION['name']}")
+    logger.info(f"API доступно на: http://0.0.0.0:5000")
+    logger.info(f"Health check: http://localhost:5000/api/health")
     
     # Инициализация агента
     agent = InvestorAgent()

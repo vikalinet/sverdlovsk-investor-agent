@@ -2377,3 +2377,183 @@
 2026-07-01 05:27:57.744 | INFO     | src.agent:_setup_logging:82 - Логирование настроено
 2026-07-01 05:27:57.745 | INFO     | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
 2026-07-01 05:27:57.745 | INFO     | web.app:<module>:38 - Агент инициализирован
+2026-07-01 05:32:44.068 | INFO     | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:32:44.070 | INFO     | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:32:44.070 | INFO     | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:32:44.072 | INFO     | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:32:44.073 | INFO     | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:32:44.073 | INFO     | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:32:44.073 | INFO     | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:32:44.073 | INFO     | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:32:44.074 | INFO     | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:32:44.491 | INFO     | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.883
+2026-07-01 05:32:44.492 | INFO     | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:32:44.492 | INFO     | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:32:44.495 | INFO     | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:32:44.497 | INFO     | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:32:44.498 | INFO     | web.app:<module>:38 - Агент инициализирован
+2026-07-01 05:32:54.117 | INFO     | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:32:54.117 | INFO     | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:32:54.118 | INFO     | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:32:54.119 | INFO     | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:32:54.119 | INFO     | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:32:54.120 | INFO     | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:32:54.120 | INFO     | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:32:54.120 | INFO     | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:32:54.120 | INFO     | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:32:54.427 | INFO     | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.950
+2026-07-01 05:32:54.427 | INFO     | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:32:54.427 | INFO     | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:32:54.429 | INFO     | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:32:54.429 | INFO     | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:32:54.429 | INFO     | web.app:<module>:38 - Агент инициализирован
+2026-07-01 05:33:30 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:33:30 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:33:30 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:33:30 | INFO | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:33:30 | INFO | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:33:30 | INFO | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:33:30 | INFO | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:33:30 | INFO | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:33:30 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:33:30 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.900
+2026-07-01 05:33:30 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:33:30 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:33:30 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:33:30 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:33:30 | INFO | web.app:<module>:67 - Агент инициализирован
+2026-07-01 05:33:39 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:33:39 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:33:39 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:33:39 | INFO | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:33:39 | INFO | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:33:39 | INFO | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:33:39 | INFO | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:33:39 | INFO | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:33:39 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:33:39 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.883
+2026-07-01 05:33:39 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:33:39 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:33:39 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:33:39 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:33:39 | INFO | web.app:<module>:67 - Агент инициализирован
+2026-07-01 05:33:48 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:33:48 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:33:48 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:33:48 | INFO | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:33:48 | INFO | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:33:48 | INFO | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:33:48 | INFO | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:33:48 | INFO | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:33:48 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:33:48 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.900
+2026-07-01 05:33:48 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:33:48 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:33:48 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:33:48 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:33:48 | INFO | web.app:<module>:67 - Агент инициализирован
+2026-07-01 05:33:58 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:33:58 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:33:58 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:33:58 | INFO | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:33:58 | INFO | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:33:58 | INFO | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:33:58 | INFO | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:33:58 | INFO | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:33:58 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:33:59 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.900
+2026-07-01 05:33:59 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:33:59 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:33:59 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:33:59 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:33:59 | INFO | web.app:<module>:67 - Агент инициализирован
+2026-07-01 05:34:07 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:34:07 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:34:07 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:34:07 | INFO | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:34:07 | INFO | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:34:07 | INFO | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:34:07 | INFO | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:34:07 | INFO | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:34:07 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:34:07 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.933
+2026-07-01 05:34:07 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:34:07 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:34:07 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:34:07 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:34:07 | INFO | web.app:<module>:67 - Агент инициализирован
+2026-07-01 05:34:16 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:34:16 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:34:16 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:34:16 | INFO | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:34:16 | INFO | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:34:16 | INFO | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:34:16 | INFO | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:34:16 | INFO | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:34:16 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:34:16 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.850
+2026-07-01 05:34:16 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:34:16 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:34:16 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:34:16 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:34:16 | INFO | web.app:<module>:67 - Агент инициализирован
+2026-07-01 05:34:25 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:34:25 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:34:25 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:34:25 | INFO | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:34:25 | INFO | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:34:25 | INFO | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:34:25 | INFO | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:34:25 | INFO | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:34:25 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:34:25 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.883
+2026-07-01 05:34:25 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:34:25 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:34:25 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:34:25 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:34:25 | INFO | web.app:<module>:67 - Агент инициализирован
+2026-07-01 05:34:32 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:34:32 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:34:32 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:34:32 | INFO | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:34:32 | INFO | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:34:32 | INFO | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:34:32 | INFO | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:34:32 | INFO | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:34:32 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:34:33 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.900
+2026-07-01 05:34:33 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:34:33 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:34:33 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:34:33 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:34:33 | INFO | web.app:<module>:67 - Агент инициализирован
+2026-07-01 05:34:41 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:34:41 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:34:41 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:34:41 | INFO | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:34:41 | INFO | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:34:41 | INFO | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:34:41 | INFO | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:34:41 | INFO | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:34:41 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:34:42 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.933
+2026-07-01 05:34:42 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:34:42 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:34:42 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:34:42 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:34:42 | INFO | web.app:<module>:67 - Агент инициализирован
+2026-07-01 05:36:48 | INFO | src.search_api_client:__init__:56 - SearchAPIClient инициализирован: provider=mock
+2026-07-01 05:36:48 | INFO | src.search_module:__init__:86 - SearchModule инициализирован для региона: Свердловская область, provider=mock
+2026-07-01 05:36:48 | INFO | src.database_module:__init__:83 - DatabaseModule инициализирован. MCP SDK: True
+2026-07-01 05:36:48 | INFO | src.template_engine:__init__:41 - TemplateEngine инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:36:48 | INFO | src.document_export:__init__:49 - DocumentExporter инициализирован: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\output\documents
+2026-07-01 05:36:48 | INFO | src.documents_module:__init__:92 - Расширенные модули документов активированы
+2026-07-01 05:36:48 | INFO | src.documents_module:_init_templates:161 - Инициализировано 5 шаблонов
+2026-07-01 05:36:48 | INFO | src.documents_module:__init__:98 - DocumentsModule инициализирован. Templates: D:\luita\Projects\sverdlovsk-investor-agent\investor_agent\templates\documents
+2026-07-01 05:36:48 | INFO | ml_models.applicability_model:__init__:158 - ApplicabilityModel инициализирована: type=gradient_boosting
+2026-07-01 05:36:48 | INFO | ml_models.applicability_model:train:457 - Модель обучена. Accuracy: 0.900
+2026-07-01 05:36:48 | INFO | src.analysis_module:__init__:92 - ML-модель оценки применимости инициализирована
+2026-07-01 05:36:48 | INFO | src.analysis_module:__init__:94 - AnalysisModule инициализирован для: Свердловская область, ML=True
+2026-07-01 05:36:48 | INFO | src.agent:_setup_logging:82 - Логирование настроено
+2026-07-01 05:36:48 | INFO | src.agent:__init__:67 - InvestorAgent инициализирован для региона: Свердловская область
+2026-07-01 05:36:48 | INFO | web.app:<module>:67 - Агент инициализирован
