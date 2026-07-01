@@ -15,6 +15,15 @@ from config import ANALYSIS_CONFIG, REGION
 from .search_module import BestPractice, InvestmentOpportunity
 from .database_module import SupportMeasure
 
+# ML-модель оценки применимости
+try:
+    from ml_models.applicability_model import ApplicabilityModel, PracticeFeatures
+    ML_AVAILABLE = True
+except ImportError:
+    ML_AVAILABLE = False
+    ApplicabilityModel = None
+    PracticeFeatures = None
+
 
 @dataclass
 class PracticeAnalysis:
@@ -66,44 +75,89 @@ class AnalysisModule:
     - Сравнительный анализ регионов
     """
     
-    def __init__(self):
+    def __init__(self, use_ml: bool = True):
         self.priority_industries = ANALYSIS_CONFIG.get("priority_industries", [])
         self.min_investment = ANALYSIS_CONFIG.get("min_investment_amount", 10_000_000)
         self.max_payback = ANALYSIS_CONFIG.get("max_payback_period", 5)
         self.target_region = REGION["name"]
+        self.use_ml = use_ml and ML_AVAILABLE
         
-        logger.info(f"AnalysisModule инициализирован для: {self.target_region}")
+        # Инициализация ML-модели
+        self.ml_model = None
+        if self.use_ml and ApplicabilityModel:
+            self.ml_model = ApplicabilityModel(model_type="gradient_boosting")
+            # Обучение на синтетических данных
+            X, y = self.ml_model.generate_training_data(n_samples=300)
+            self.ml_model.train(X, y, test_size=0.2)
+            logger.info("ML-модель оценки применимости инициализирована")
+        
+        logger.info(f"AnalysisModule инициализирован для: {self.target_region}, ML={self.use_ml}")
     
     def analyze_practice(
         self,
-        practice: BestPractice
+        practice: BestPractice,
+        use_ml: bool = True
     ) -> PracticeAnalysis:
         """
         Детальный анализ лучшей практики
         
         Args:
             practice: Объект лучшей практики
+            use_ml: Использовать ML-модель для оценки
         
         Returns:
             Результаты анализа с рекомендациями
         """
         logger.info(f"Анализ практики: {practice.name}")
         
+        # ML-оценка применимости
+        ml_score = practice.applicability_score
+        ml_recommendations = []
+        
+        if use_ml and self.ml_model and PracticeFeatures:
+            try:
+                # Преобразование практики в признаки для ML
+                practice_features = PracticeFeatures(
+                    investment_required=0.5,  # Средняя оценка
+                    implementation_time=12,
+                    complexity=5,
+                    innovation_level=6,
+                    industry_match=0.8 if practice.industry in self.priority_industries else 0.6,
+                    technology_level=6,
+                    economic_effect=0.7,
+                    social_effect=0.6,
+                    environmental_effect=0.5
+                )
+                
+                ml_result = self.ml_model.predict(
+                    source_region=practice.region,
+                    target_region=self.target_region,
+                    practice=practice_features
+                )
+                
+                ml_score = ml_result.score
+                ml_recommendations = ml_result.recommendations
+                logger.debug(f"ML оценка: {ml_score:.3f}, категория: {ml_result.category}")
+                
+            except Exception as e:
+                logger.warning(f"ML-оценка не удалась: {e}, использую rule-based")
+        
         # Генерация рекомендаций по адаптации
         adaptation_recs = self._generate_adaptation_recommendations(practice)
+        adaptation_recs.extend(ml_recommendations[:2])  # Добавляем ML-рекомендации
         
         # Оценка рисков
         risks = self._assess_implementation_risks(practice)
         
         # Расчёт ожидаемой выгоды
-        expected_benefit = self._calculate_expected_benefit(practice)
+        expected_benefit = self._calculate_expected_benefit(practice, ml_score)
         
         # Timeline реализации
         timeline = self._estimate_timeline(practice)
         
         analysis = PracticeAnalysis(
             practice=practice,
-            applicability_score=practice.applicability_score,
+            applicability_score=ml_score,
             adaptation_recommendations=adaptation_recs,
             estimated_cost=practice.implementation_cost or "Требует уточнения",
             expected_benefit=expected_benefit,
@@ -191,9 +245,12 @@ class AnalysisModule:
     
     def _calculate_expected_benefit(
         self,
-        practice: BestPractice
+        practice: BestPractice,
+        applicability_score: Optional[float] = None
     ) -> str:
         """Расчёт ожидаемой выгоды"""
+        score = applicability_score if applicability_score is not None else practice.applicability_score
+        
         # Парсинг результатов из практики
         base_results = practice.results or "Данные отсутствуют"
         
@@ -201,7 +258,7 @@ class AnalysisModule:
         benefit = (
             f"{base_results}. "
             f"Для {self.target_region} прогнозируется аналогичный эффект "
-            f"с коэффициентом {practice.applicability_score:.2f}"
+            f"с коэффициентом применимости {score:.2f}"
         )
         
         return benefit
