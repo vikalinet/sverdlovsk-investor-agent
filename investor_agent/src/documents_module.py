@@ -16,6 +16,16 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config import DOCUMENTS_CONFIG, REGION
 
+# Импорт расширенных модулей
+try:
+    from .template_engine import TemplateEngine
+    from .document_export import DocumentExporter
+    EXTENDED_MODULES_AVAILABLE = True
+except ImportError:
+    EXTENDED_MODULES_AVAILABLE = False
+    TemplateEngine = None
+    DocumentExporter = None
+
 
 @dataclass
 class DocumentTemplate:
@@ -57,7 +67,7 @@ class DocumentsModule:
     - Валидация и верификация
     """
     
-    def __init__(self):
+    def __init__(self, use_extended: bool = True):
         self.templates_dir = Path(DOCUMENTS_CONFIG.get("templates_dir", "templates/documents"))
         self.output_dir = Path(DOCUMENTS_CONFIG.get("output_dir", "output/documents"))
         
@@ -70,6 +80,16 @@ class DocumentsModule:
             loader=FileSystemLoader(self.templates_dir),
             autoescape=select_autoescape(['html', 'xml'])
         )
+        
+        # Расширенные модули
+        self.use_extended = use_extended and EXTENDED_MODULES_AVAILABLE
+        self.template_engine = None
+        self.document_exporter = None
+        
+        if self.use_extended and TemplateEngine:
+            self.template_engine = TemplateEngine(self.templates_dir)
+            self.document_exporter = DocumentExporter(self.output_dir)
+            logger.info("Расширенные модули документов активированы")
         
         # Загрузка шаблонов
         self.templates: dict[str, DocumentTemplate] = {}
@@ -543,3 +563,143 @@ class DocumentsModule:
         }
         
         return checklists.get(measure_type, [])
+
+    def generate_document_v2(
+        self,
+        template_name: str,
+        context: dict,
+        output_filename: Optional[str] = None,
+        export_format: str = "txt"
+    ) -> Path:
+        """
+        Генерация документа с использованием расширенного движка
+        
+        Args:
+            template_name: Имя шаблона (например, 'grant_application_v2.jinja2')
+            context: Контекст для рендеринга
+            output_filename: Имя выходного файла
+            export_format: Формат экспорта (txt, docx, pdf)
+        
+        Returns:
+            Путь к сгенерированному файлу
+        """
+        if not self.use_extended or not self.template_engine:
+            # Fallback к старой версии
+            return self.generate_document(template_name, context, output_filename)
+        
+        # Валидация
+        is_valid, errors = self.template_engine.validate_template(template_name, context)
+        if not is_valid:
+            logger.warning(f"Валидация шаблона: {errors}")
+        
+        # Рендеринг
+        content = self.template_engine.render(template_name, context)
+        
+        # Экспорт
+        if output_filename is None:
+            output_filename = f"{template_name.replace('.jinja2', '')}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        
+        if self.document_exporter:
+            metadata = {
+                'title': context.get('project_data', {}).get('project_name', 'Документ'),
+                'generated_at': datetime.now().strftime('%d.%m.%Y %H:%M'),
+                'template': template_name
+            }
+            
+            output_path = self.document_exporter.export(
+                content=content,
+                filename=output_filename,
+                format=export_format,
+                metadata=metadata
+            )
+            return output_path
+        else:
+            # Fallback к TXT
+            output_path = self.output_dir / f"{output_filename}.txt"
+            output_path.write_text(content, encoding='utf-8')
+            return output_path
+    
+    def create_document_package_v2(
+        self,
+        measure_name: str,
+        measure_type: str,
+        project_data: dict,
+        export_format: str = "txt"
+    ) -> DocumentPackage:
+        """
+        Создание пакета документов с расширенными возможностями
+        
+        Args:
+            measure_name: Название меры поддержки
+            measure_type: Тип меры (grant, subsidy, fund)
+            project_data: Данные проекта
+            export_format: Формат экспорта (txt, docx, pdf)
+        
+        Returns:
+            Пакет документов
+        """
+        logger.info(f"Создание расширенного пакета документов: {measure_name}")
+        
+        # Определение необходимых документов
+        doc_templates = {
+            "grant": ["grant_application_v2.jinja2", "investment_proposal_v2.jinja2"],
+            "subsidy": ["subsidy_application.jinja2"],
+            "fund": ["fund_application.jinja2"]
+        }
+        
+        templates = doc_templates.get(measure_type, ["grant_application_v2.jinja2"])
+        
+        documents = []
+        for template in templates:
+            try:
+                output_path = self.generate_document_v2(
+                    template_name=template,
+                    context={
+                        'project_data': project_data,
+                        'measure': {'name': measure_name, 'type': measure_type},
+                        'today': datetime.now(),
+                        'documents_required': self.get_checklist_for_measure(measure_type)
+                    },
+                    export_format=export_format
+                )
+                
+                documents.append({
+                    "type": template.replace('.jinja2', ''),
+                    "filename": output_path.name,
+                    "path": str(output_path),
+                    "status": "generated",
+                    "format": export_format
+                })
+            except Exception as e:
+                logger.error(f"Ошибка генерации {template}: {e}")
+                documents.append({
+                    "type": template.replace('.jinja2', ''),
+                    "filename": f"{template}.error",
+                    "path": "",
+                    "status": "error",
+                    "error": str(e)
+                })
+        
+        package = DocumentPackage(
+            id=f"PKG-V2-{datetime.now().strftime('%Y%m%d%H%M%S')}",
+            measure_name=measure_name,
+            measure_type=measure_type,
+            documents=documents,
+            created_at=datetime.now().isoformat(),
+            status="draft"
+        )
+        
+        # Сохранение метаданных
+        self._save_package_metadata(package)
+        
+        # Создание архива если несколько документов
+        if len(documents) > 1 and self.document_exporter:
+            doc_paths = [Path(d["path"]) for d in documents if d["status"] == "generated"]
+            if doc_paths:
+                archive_path = self.document_exporter.create_archive(
+                    doc_paths,
+                    f"package_{measure_name.replace(' ', '_')}_{datetime.now().strftime('%Y%m%d')}"
+                )
+                logger.info(f"Архив создан: {archive_path}")
+        
+        return package

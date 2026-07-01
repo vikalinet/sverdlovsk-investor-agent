@@ -1,0 +1,165 @@
+ИНВЕСТИЦИОННОЕ ПРЕДЛОЖЕНИЕ
+{{ proposal.title }}
+
+================================================================================
+
+РЕЗЮМЕ ПРОЕКТА
+
+{{ proposal.summary | default('Инвестиционный проект по развитию производственной деятельности в Свердловской области.') }}
+
+Ключевые показатели:
+  - Общий объём инвестиций: {{ proposal.total_investment | money }}
+  - Срок реализации: {{ proposal.implementation_period | default('24 месяца') }}
+  - Срок окупаемости: {{ proposal.payback_period | default('4.5 года') }}
+  - ROI: {{ proposal.roi | default(0.22) | percent }}
+  - NPV: {{ proposal.npv | default(0) | money }}
+  - IRR: {{ proposal.irr | default(0.18) | percent }}
+
+================================================================================
+
+1. ОПИСАНИЕ ПРОЕКТА
+
+1.1. Наименование проекта
+{{ proposal.title }}
+
+1.2. Инициатор проекта
+{{ proposal.initiator | default('Не указан') }}
+
+1.3. Цель проекта
+{{ proposal.goal | default('Создание современного производственного предприятия') }}
+
+1.4. Задачи проекта
+{% for task in proposal.tasks | default(['Разработка проектной документации', 'Строительство объекта', 'Закупка оборудования', 'Найм персонала']) %}
+  - {{ task }}
+{% endfor %}
+
+1.5. Локация
+{{ proposal.location | default('Свердловская область') }}
+
+================================================================================
+
+2. РЫНОЧНЫЙ АНАЛИЗ
+
+2.1. Описание рынка
+{{ proposal.market_description | default('Рынок демонстрирует устойчивый рост...') }}
+
+2.2. Целевая аудитория
+{% for segment in proposal.target_audience | default(['Промышленные предприятия', 'Строительные компании']) %}
+  - {{ segment }}
+{% endfor %}
+
+2.3. Конкурентная среда
+{{ proposal.competition | default('На рынке присутствуют как федеральные, так и региональные игроки...') }}
+
+2.4. SWOT-анализ
+
+Сильные стороны:
+{% for strength in proposal.swot_strengths | default(['Уникальная технология', 'Квалифицированная команда']) %}
+  - {{ strength }}
+{% endfor %}
+
+Слабые стороны:
+{% for weakness in proposal.swot_weaknesses | default(['Высокие первоначальные затраты', 'Длительный срок окупаемости']) %}
+  - {{ weakness }}
+{% endfor %}
+
+Возможности:
+{% for opportunity in proposal.swot_opportunities | default(['Рост спроса', 'Господдержка']) %}
+  - {{ opportunity }}
+{% endfor %}
+
+Угрозы:
+{% for threat in proposal.swot_threats | default(['Изменение законодательства', 'Рост конкуренции']) %}
+  - {{ threat }}
+{% endfor %}
+
+================================================================================
+
+3. ФИНАНСОВЫЙ ПЛАН
+
+3.1. Структура инвестиций
+
+| Статья расходов              | Сумма, {{ proposal.currency | default('₽') }} | Доля, % |
+|------------------------------|---------------|---------|
+| Строительство/ремонт         | {{ proposal.construction_cost | default(0) | money }} | {{ ((proposal.construction_cost | default(0)) / proposal.total_investment * 100) | default(0) | round(1) }}% |
+| Оборудование                 | {{ proposal.equipment_cost | default(0) | money }} | {{ ((proposal.equipment_cost | default(0)) / proposal.total_investment * 100) | default(0) | round(1) }}% |
+| Оборотные средства           | {{ proposal.working_capital | default(0) | money }} | {{ ((proposal.working_capital | default(0)) / proposal.total_investment * 100) | default(0) | round(1) }}% |
+| Прочее                       | {{ proposal.other_costs | default(0) | money }} | {{ ((proposal.other_costs | default(0)) / proposal.total_investment * 100) | default(0) | round(1) }}% |
+|------------------------------|---------------|---------|
+| ИТОГО                        | {{ proposal.total_investment | money }} | 100% |
+
+3.2. Источники финансирования
+
+| Источник                     | Сумма, {{ proposal.currency | default('₽') }} | Доля, % |
+|------------------------------|---------------|---------|
+| Собственные средства         | {{ proposal.own_funds | default(0) | money }} | {{ ((proposal.own_funds | default(0)) / proposal.total_investment * 100) | default(0) | round(1) }}% |
+| Заёмные средства             | {{ proposal.debt_funds | default(0) | money }} | {{ ((proposal.debt_funds | default(0)) / proposal.total_investment * 100) | default(0) | round(1) }}% |
+| Меры господдержки            | {{ proposal.support_funds | default(0) | money }} | {{ ((proposal.support_funds | default(0)) / proposal.total_investment * 100) | default(0) | round(1) }}% |
+|------------------------------|---------------|---------|
+| ИТОГО                        | {{ proposal.total_investment | money }} | 100% |
+
+3.3. Прогноз доходов
+
+| Год | Выручка, {{ proposal.currency | default('₽') }} | EBITDA, {{ proposal.currency | default('₽') }} | Чистая прибыль, {{ proposal.currency | default('₽') }} |
+|-----|---------------|---------------|----------------|
+| 1   | {{ proposal.revenue_year1 | default(0) | money }} | {{ proposal.ebitda_year1 | default(0) | money }} | {{ proposal.profit_year1 | default(0) | money }} |
+| 2   | {{ proposal.revenue_year2 | default(0) | money }} | {{ proposal.ebitda_year2 | default(0) | money }} | {{ proposal.profit_year2 | default(0) | money }} |
+| 3   | {{ proposal.revenue_year3 | default(0) | money }} | {{ proposal.ebitda_year3 | default(0) | money }} | {{ proposal.profit_year3 | default(0) | money }} |
+| 4   | {{ proposal.revenue_year4 | default(0) | money }} | {{ proposal.ebitda_year4 | default(0) | money }} | {{ proposal.profit_year4 | default(0) | money }} |
+| 5   | {{ proposal.revenue_year5 | default(0) | money }} | {{ proposal.ebitda_year5 | default(0) | money }} | {{ proposal.profit_year5 | default(0) | money }} |
+
+================================================================================
+
+4. ПЛАН РЕАЛИЗАЦИИ
+
+{% for stage in proposal.implementation_plan | default([]) %}
+Этап {{ stage.stage }}: {{ stage.name }}
+  Срок: {{ stage.duration | default('Не указан') }}
+  Мероприятия:
+  {% for activity in stage.activities | default([]) %}
+    - {{ activity }}
+  {% endfor %}
+
+{% endfor %}
+
+================================================================================
+
+5. РИСКИ И ГАРАНТИИ
+
+5.1. Основные риски
+
+{% for risk in proposal.risks | default(['Рыночные риски', 'Финансовые риски']) %}
+  - {{ risk }}
+{% endfor %}
+
+5.2. Меры по минимизации рисков
+
+{% for measure in proposal.risk_mitigation | default(['Диверсификация', 'Страхование']) %}
+  - {{ measure }}
+{% endfor %}
+
+================================================================================
+
+6. РЕКОМЕНДАЦИИ
+
+{% for rec in proposal.recommendations | default(['Подать заявку на меры господдержки', 'Провести due diligence']) %}
+  {{ loop.index }}. {{ rec }}
+{% endfor %}
+
+================================================================================
+
+ПРИЛОЖЕНИЯ
+
+1. Финансовая модель (расчёт NPV, IRR, срока окупаемости)
+2. Маркетинговое исследование
+3. Технико-экономическое обоснование
+4. Документы инициатора проекта
+
+================================================================================
+
+Документ подготовлен: {{ today | date }}
+Контактное лицо: {{ proposal.contact_person | default('Не указан') }}
+Телефон: {{ proposal.contact_phone | default('Не указан') }}
+Email: {{ proposal.contact_email | default('Не указан') }}
+
+================================================================================

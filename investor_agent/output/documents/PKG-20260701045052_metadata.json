@@ -1,0 +1,56 @@
+{
+  "id": "PKG-20260701045052",
+  "measure_name": "Грант на развитие",
+  "measure_type": "grant",
+  "documents": [
+    {
+      "type": "grant_application",
+      "filename": "grant_application.txt",
+      "path": "",
+      "status": "error",
+      "error": "Отсутствуют обязательные поля: ['description']"
+    },
+    {
+      "type": "business_plan",
+      "filename": "business_plan.txt",
+      "path": "",
+      "status": "error",
+      "error": "Отсутствуют обязательные поля: ['summary', 'market_analysis', 'financial_plan', 'risk_analysis']"
+    },
+    {
+      "type": "financial_model",
+      "filename": "financial_model.txt",
+      "path": "",
+      "status": "error",
+      "error": "Отсутствуют обязательные поля: ['revenue_forecast', 'expenses_forecast', 'cash_flow', 'payback_period']"
+    }
+  ],
+  "created_at": "2026-07-01T04:50:52.282089",
+  "status": "needs_revision",
+  "validation_results": {
+    "grant_application": {
+      "is_valid": false,
+      "errors": [
+        "Отсутствуют обязательные поля: ['description']"
+      ],
+      "warnings": [],
+      "checklist_passed": 0.0
+    },
+    "business_plan": {
+      "is_valid": false,
+      "errors": [
+        "Отсутствуют обязательные поля: ['summary', 'market_analysis', 'financial_plan', 'risk_analysis']"
+      ],
+      "warnings": [],
+      "checklist_passed": 0.0
+    },
+    "financial_model": {
+      "is_valid": false,
+      "errors": [
+        "Отсутствуют обязательные поля: ['revenue_forecast', 'expenses_forecast', 'cash_flow', 'payback_period']"
+      ],
+      "warnings": [],
+      "checklist_passed": 0.0
+    }
+  }
+}
