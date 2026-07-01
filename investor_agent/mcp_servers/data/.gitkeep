@@ -1,0 +1,3 @@
+# Keep this directory in git
+# SQLite базы данных будут создаваться при инициализации
+# run_mcp_servers.py или командами инициализации

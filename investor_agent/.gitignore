@@ -1,0 +1,147 @@
+# ==================== Python ====================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ==================== Логи ====================
+logs/
+*.log
+
+# ==================== Выходные файлы ====================
+output/
+documents/
+reports/
+
+# ==================== Базы данных ====================
+# SQLite базы данных (генерируемые)
+*.db
+*.db-journal
+
+# Но оставляем шаблоны баз данных если есть
+# !mcp_servers/data/.gitkeep
+
+# ==================== Секреты и конфиги ====================
+# Файлы с секретными ключами
+.env
+.env.local
+.env.*.local
+*.secret
+*.key
+
+# Конфигурационные файлы с чувствительными данными
+config.local.py
+settings.local.py
+credentials.json
+service_account.json
+
+# ==================== Временные файлы ====================
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
+# ==================== ОС ====================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ==================== Jupyter Notebook ====================
+.ipynb_checkpoints
+
+# ==================== mypy ====================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ==================== Документация ====================
+# Сгенерированная документация
+docs/_build/
+site/
+
+# ==================== Проект специфичное ====================
+# Временные файлы тестов
+test_*.txt
+test_*.json
+test_*.docx
+test_*.pdf
+
+# Архивы с документами
+*.zip
+
+# Временные файлы экспорта
+*.xlsx
