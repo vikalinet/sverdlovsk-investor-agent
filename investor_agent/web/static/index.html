@@ -437,7 +437,7 @@
             showLoading('practices-results');
             
             try {
-                const result = await apiRequest('/api/practices', 'POST', { industry });
+                const result = await apiRequest('/practices', 'POST', { industry });
                 
                 if (result.success) {
                     let html = '';
@@ -481,7 +481,7 @@
             showLoading('opportunities-results');
             
             try {
-                const result = await apiRequest('/api/opportunities', 'POST', { industry, min_investment: minInvestment });
+                const result = await apiRequest('/opportunities', 'POST', { industry, min_investment: minInvestment });
                 
                 if (result.success) {
                     let html = '';
@@ -515,7 +515,7 @@
             showLoading('support-results');
             
             try {
-                const result = await apiRequest('/api/support-measures', 'POST', { industry });
+                const result = await apiRequest('/support-measures', 'POST', { industry });
                 
                 if (result.success) {
                     let html = '';
@@ -579,7 +579,7 @@
                     description: "Реализация инвестиционного проекта"
                 };
                 
-                const result = await apiRequest('/api/documents/package', 'POST', {
+                const result = await apiRequest('/documents/package', 'POST', {
                     measure_name: "Грант на развитие производства",
                     measure_type: measureType,
                     project_data: projectData
@@ -618,7 +618,7 @@
             showLoading('analysis-results');
             
             try {
-                const result = await apiRequest('/api/analysis/full', 'POST', { industry });
+                const result = await apiRequest('/analysis/full', 'POST', { industry });
                 
                 if (result.success) {
                     const data = result.data;

@@ -21,6 +21,10 @@ from config import REGION
 app = Flask(__name__, static_folder='static', static_url_path='')
 CORS(app)  # Разрешаем CORS для React
 
+# Настройка JSON для корректной кодировки UTF-8 (Flask 3.x)
+app.json.ensure_ascii = False  # Разрешаем Unicode символы
+app.json.sort_keys = False  # Сохраняем порядок ключей
+
 # Настройка логирования
 logger.add(
     "logs/web_api.log",
